@@ -31,7 +31,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
-  const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
+  const isNonMobileScreens = useMediaQuery("(min-width: 800px)");
 
   const theme = useTheme();
   const neutralLight = theme.palette.neutral.light;
@@ -40,7 +40,7 @@ const Navbar = () => {
   const primaryLight = theme.palette.background.light;
   const alt = theme.palette.background.alt;
 
-  const fullName = `${user.firstName} ${user.LastName}`;
+  const fullName = `Anish`;
 
   return (
     <FlexBetween padding="1rem 6%" backgroundColor={alt}>
@@ -115,7 +115,7 @@ const Navbar = () => {
         </FlexBetween>
       ) : (
         <IconButton onClick={() => setMobileMenuToggled(!isMobileMenuToggled)}>
-          <Menu />
+          {!isMobileMenuToggled && <Menu />}
         </IconButton>
       )}
       {/* MOBILE NAV */}
