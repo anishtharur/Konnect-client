@@ -40,14 +40,14 @@ const Navbar = () => {
   const primaryLight = theme.palette.background.light;
   const alt = theme.palette.background.alt;
 
-  const fullName = `Anish`;
+  const fullName = !user ? "Anish" : `${user.firstName} ${user.lastName}`;
 
   return (
     <FlexBetween padding="1rem 6%" backgroundColor={alt}>
       <FlexBetween gap="1.75rem">
         <Typography
           fontWeight="bold"
-          fontSize="clamp(1rem, 2rem, 2.25rem"
+          fontSize="clamp(1rem, 2rem, 2.25rem)"
           color="primary"
           onClick={() => navigate("/home")}
           sx={{
@@ -115,7 +115,8 @@ const Navbar = () => {
         </FlexBetween>
       ) : (
         <IconButton onClick={() => setMobileMenuToggled(!isMobileMenuToggled)}>
-          {!isMobileMenuToggled && <Menu />}
+          {/* {!isMobileMenuToggled && <Menu />} */}
+          <Menu />
         </IconButton>
       )}
       {/* MOBILE NAV */}
@@ -125,10 +126,11 @@ const Navbar = () => {
           right="0"
           bottom="0"
           height="100%"
-          zIndex="10"
-          maxWidth="500px"
-          minWidth="300px"
-          background={background}
+          zIndex="1"
+          maxWidth="300px"
+          minWidth="200px"
+          backgroundColor={background}
+          borderRadius="0.25rem"
         >
           {/* Close Icon */}
           <Box display="flex" justifyContent="flex-end" p="1rem">
