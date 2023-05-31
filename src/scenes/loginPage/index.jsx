@@ -13,18 +13,7 @@ const LoginPage = () => {
         p="1rem 6%"
         textAlign="center"
       >
-        <Typography
-          fontWeight="bold"
-          fontSize="32px"
-          color="primary"
-          onClick={() => navigate("/home")}
-          sx={{
-            "&:hover": {
-              color: primaryLight,
-              cursor: "pointer",
-            },
-          }}
-        >
+        <Typography fontWeight="bold" fontSize="32px" color="primary">
           Konnect
         </Typography>
       </Box>

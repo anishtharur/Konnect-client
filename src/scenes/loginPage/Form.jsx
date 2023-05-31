@@ -9,12 +9,12 @@ import {
   useTheme,
 } from "@mui/material";
 import { EditOutlined } from "@mui/icons-material";
-import { Formik } from "formik";
-import * as yup from "yup";
+import { Formik } from "formik"; //form library
+import * as yup from "yup"; //validation library
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setLogin } from "state";
-import Dropzone from "react-dropzone";
+import Dropzone from "react-dropzone"; //file upload library
 import FlexBetween from "components/FlexBetween";
 
 const Form = () => {
