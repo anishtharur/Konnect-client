@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
+import Form from "./Form";
 
 const LoginPage = () => {
   const theme = useTheme();
@@ -25,8 +26,9 @@ const LoginPage = () => {
         backgroundColor={theme.palette.background.alt}
       >
         <Typography fontWeight="500" variant="h5" sx={{ mb: "1.5rem" }}>
-          Welcome to Konnect, where Konnections become communities
+          Welcome to Konnect, where we build kommunities
         </Typography>
+        <Form />
       </Box>
     </Box>
   );
