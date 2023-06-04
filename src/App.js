@@ -7,7 +7,9 @@ import { useSelector } from "react-redux";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import { themeSettings } from "./theme";
-
+export const configR = {
+  url: `http://localhost:3001`,
+};
 function App() {
   const mode = useSelector((state) => state.mode);
   const isauth = useSelector((state) => state.token);
