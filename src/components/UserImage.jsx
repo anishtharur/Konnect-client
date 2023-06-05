@@ -8,7 +8,7 @@ const UserImage = ({ image, size = "60px" }) => {
         style={{ objectFit: "cover", borderRadius: "50%" }}
         width={size}
         height={size}
-        src={`${configR}/assets/${image}`}
+        src={`${configR.url}/assets/${image}`}
       />
     </Box>
   );

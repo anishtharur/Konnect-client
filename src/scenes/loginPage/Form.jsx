@@ -55,6 +55,7 @@ const Form = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
   const isLogin = pageType === "login";
   const isRegister = pageType === "register";
+  const [picturePathImg, setPicturePathImg] = useState(null);
 
   const register = async (values, onSubmitProps) => {
     // this allows us to send form info with image--debug and see
@@ -62,8 +63,9 @@ const Form = () => {
     for (let value in values) {
       formData.append(value, values[value]);
     }
-    formData.append("picturePath", values.picture.name);
+    formData.append("picturePath", picturePathImg);
 
+    debugger;
     const savedUserResponse = await fetch(`${configR.url}/auth/register`, {
       method: "POST",
       body: formData,
@@ -180,9 +182,10 @@ const Form = () => {
                   <Dropzone
                     acceptedFiles=".jpg,.jpeg,.png"
                     multiple={false}
-                    onDrop={(acceptedFiles) =>
-                      setFieldValue("picture", acceptedFiles[0])
-                    }
+                    onDrop={(acceptedFiles) => {
+                      setPicturePathImg(acceptedFiles[0].name);
+                      setFieldValue("picture", acceptedFiles[0]);
+                    }}
                   >
                     {({ getRootProps, getInputProps }) => (
                       <Box
