@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { configR } from "App";
 
-const UserWidget = ({ userId, picturepath }) => {
+const UserWidget = ({ userId }) => {
   const [user, setUser] = useState(null);
   const { palette } = useTheme();
   const navigate = useNavigate();
