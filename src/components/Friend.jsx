@@ -24,15 +24,20 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
   const isFriend = friends.find((friend) => friend._id === friendId);
 
   const patchFriend = async () => {
-    const res = await fetch(`${configR.url}/${_id}/${friendId}`, {
-      method: "PATCH",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-    });
-    const data = res.json();
-    dispatch(setFriends({ friends: data }));
+    try {
+      const response = await fetch(`${configR.url}/users/${_id}/${friendId}`, {
+        method: "PATCH",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await response.json();
+      console.log(data);
+      dispatch(setFriends({ friends: data }));
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -52,7 +57,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
             sx={{
               "&:hover": {
                 color: palette.primary.light,
-                cursor: pointer,
+                cursor: "pointer",
               },
             }}
           >

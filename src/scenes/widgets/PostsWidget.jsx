@@ -5,12 +5,12 @@ import { setPosts } from "state";
 import PostWidget from "./PostWidget";
 import { configR } from "App";
 
-const PostsWidget = () => {
+const PostsWidget = ({ userId, isProfile = false }) => {
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts);
   const token = useSelector((state) => state.token);
 
-  const getPosts = async ({ userId, isProfile = false }) => {
+  const getPosts = async () => {
     const res = await fetch(`${configR.url}/posts`, {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
