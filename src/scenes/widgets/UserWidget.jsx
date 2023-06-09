@@ -51,7 +51,7 @@ const UserWidget = ({ userId }) => {
       <FlexBetween
         gap="0.5rem"
         pb="1.1rem"
-        onClick={() => navigate("/profile/${userId}")}
+        onClick={() => navigate(`/profile/${userId}`)}
       >
         {/* First Row */}
         <FlexBetween gap="1rem">
