@@ -8,7 +8,7 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import { themeSettings } from "./theme";
 export const configR = {
-  url: `http://localhost:3001`,
+  url: `https://konnect-ri77.onrender.com`,
 };
 function App() {
   const mode = useSelector((state) => state.mode);
