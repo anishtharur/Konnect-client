@@ -24,7 +24,7 @@ const registerSchema = yup.object().shape({
   password: yup.string().required("required"),
   location: yup.string().required("required"),
   occupation: yup.string().required("required"),
-  picture: yup.string().required("required"),
+  picture: yup.mixed().required("required"),
 });
 
 const loginSchema = yup.object().shape({
@@ -65,7 +65,6 @@ const Form = () => {
     }
     formData.append("picturePath", picturePathImg);
 
-    debugger;
     const savedUserResponse = await fetch(`${configR.url}/auth/register`, {
       method: "POST",
       body: formData,
